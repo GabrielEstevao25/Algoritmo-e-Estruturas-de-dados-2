@@ -2,7 +2,12 @@ import java.util.Scanner;
 
 public class MetodosOrdenacao {
 
-    // INSERTION
+    /* 
+    INSERTION
+    Melhor caso = Θ(n)
+    Caso médio = Θ(n²)
+    Pior caso = Θ(n²)
+    */
     public static int[] insertionSort(int[]array){
 
         int[] arrayOrdenado = array.clone();
@@ -20,7 +25,13 @@ public class MetodosOrdenacao {
         return arrayOrdenado;
     }
 
-    // BUBLLE
+    /*
+    BUBBLE
+    Melhor caso = Θ(n)
+    Caso médio = Θ(n²)
+    Pior caso = Θ(n²)
+
+    */
     public static int[] bubbleSort(int[]array){
         int[] arrayOrdenado = array.clone();
 
@@ -36,7 +47,12 @@ public class MetodosOrdenacao {
         return arrayOrdenado;
     }
 
-    //SELECTION
+    /*
+    SELECTION
+    Melhor caso = Θ(n)
+    Caso médio = Θ(n²)
+    Pior caso = Θ(n²)
+    */
     public static int[] selectionSort(int[] array){
         
         int [] arrayOrdenado = array.clone();
