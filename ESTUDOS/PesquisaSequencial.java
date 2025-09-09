@@ -2,10 +2,14 @@ import java.util.Scanner;
 
 public class PesquisaSequencial {
 
-    public static int buscaSequencial(int[] array, int n){
+    /*
+    Para a pesquisa sequencial não precisamos que o vetor esteja previamente ordenado
+     */
+
+    public static int buscaSequencial(int[] array, int x){
 
         for(int pos = 0; pos < array.length -1; pos++){
-            if(array[pos] == n){
+            if(array[pos] == x){
                 return pos;
             }
         }
@@ -16,9 +20,9 @@ public class PesquisaSequencial {
         Scanner scanner = new Scanner(System.in);
         int[] array = {5, 2, 9, 1, 5, 6};
         System.out.println("Qual número deseja encontrar?");
-        int n = scanner.nextInt();
+        int x = scanner.nextInt();
 
-        int posPesquisa = buscaSequencial(array, n);
+        int posPesquisa = buscaSequencial(array, x);
 
         System.out.println("Array:");
         
@@ -29,10 +33,7 @@ public class PesquisaSequencial {
         if(posPesquisa == -1){
             System.out.println("O termo procurado não existe!");
         }else{
-            System.out.println("Posicao do " + n + " é:" + posPesquisa);
+            System.out.println("Posicao do " + x + " é:" + posPesquisa);
         }
-    
-
-
     }
 }
