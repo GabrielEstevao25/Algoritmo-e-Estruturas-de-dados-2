@@ -9,76 +9,54 @@ bool vogais(char palavra[]){
         char c = palavra[i];
         if (!(c == 'A'|| c == 'a'|| c == 'E'|| c == 'e'||
               c == 'I'|| c == 'i'|| c == 'O'|| c == 'o' ||
-              c == 'U'|| c == 'u' || c == ' ')){
+              c == 'U'|| c == 'u')){
             return false;
         }
     }
     return true;
 }
 
-bool consoantes(char palavra[]) {
+bool consoantes(char palavra[]){
     int tam = strlen(palavra);
-    for (int i = 0; i < tam; i++) {
+    for(int i = 0; i < tam; i++){
         char c = palavra[i];
-        if (!(
-            ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) 
-            &&
-            !(c == 'A'|| c == 'a'|| c == 'E'|| c == 'e'||
-              c == 'I'|| c == 'i'|| c == 'O'|| c == 'o'||
-              c == 'U'|| c == 'u') 
-        )) {
+        if (c == 'A'|| c == 'a'|| c == 'E'|| c == 'e'||
+            c == 'I'|| c == 'i'|| c == 'O'|| c == 'o' ||
+            c == 'U'|| c == 'u'){
             return false;
         }
     }
     return true;
 }
 
-bool numero(char palavra[]) {
-    int tam = strlen(palavra);
-    if (tam == 0) return false;
-    for (int i = 0; i < tam; i++) {
-        char c = palavra[i];
-        if (c < '0' || c > '9') return false; 
-    }
-    return true; 
+bool numero(char palavra){
+
+
 }
 
-bool numeroReal(char palavra[]) {
-    int tam = strlen(palavra);
-    int contVirgula = 0;
-    for (int i = 0; i < tam; i++) {
-        char c = palavra[i];
-        if (c == ',' || c == '.') {
-            contVirgula++;
-            if (contVirgula > 1) return false;
-        } else if (c < '0' || c > '9') return false; 
-    }
-    return true; 
+bool numeroInteiro(char palavra){
+
+
 }
 
 int main(){
-    char entrada[1000];
+    char entrada[100];
+    scanf("%s", entrada);
 
-    fgets(entrada, sizeof(entrada), stdin);
-    entrada[strcspn(entrada, "\n")] = '\0';
+    bool resposta1 = vogais(entrada);
+    bool resposta2 = consoantes(entrada);
 
-    while(strcmp(entrada, "FIM") != 0){
-
-        if(vogais(entrada)){
-            printf("SIM NAO NAO NAO\n");
-        } else if(consoantes(entrada)){
-            printf("NAO SIM NAO NAO\n");
-        } else if(numero(entrada)){
-            printf("NAO NAO SIM SIM\n");
-        } else if(numeroReal(entrada)){
-            printf("NAO NAO NAO SIM\n");
-        } else {
-            printf("NAO NAO NAO NAO\n");
-        }
-
-        fgets(entrada, sizeof(entrada), stdin);
-        entrada[strcspn(entrada, "\n")] = '\0';
+    if(resposta1){
+        printf("SIM\n");
+    } else {
+        printf("NAO\n");
     }
+
+    if(resposta2){
+        printf("SIM\n");
+    } else {
+        printf("NAO\n");
+    }
+
     return 0;
 }
-

@@ -17,6 +17,7 @@ public class Palindromo {
     public static void main(String[] args) {
         String palavra = MyIO.readLine();
 
+        // Enquanto não for "FIM"
         while (!palavra.equals("FIM")) {
             if (ehPalindromo(palavra)) {
                 MyIO.println("SIM");
