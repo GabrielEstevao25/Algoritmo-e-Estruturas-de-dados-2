@@ -19,7 +19,7 @@ public class PesquisaSequencial {
 
         Scanner scanner = new Scanner(System.in);
         int[] array = {5, 2, 9, 1, 5, 6};
-        System.out.println("Qual número deseja encontrar?");
+        System.out.println("Qual numero deseja encontrar?");
         int x = scanner.nextInt();
 
         int posPesquisa = buscaSequencial(array, x);
@@ -31,9 +31,9 @@ public class PesquisaSequencial {
         }
         System.out.println();
         if(posPesquisa == -1){
-            System.out.println("O termo procurado não existe!");
+            System.out.println("O termo procurado nao existe!");
         }else{
-            System.out.println("Posicao do " + x + " é:" + posPesquisa);
+            System.out.println("Posicao do " + x + " e:" + posPesquisa);
         }
     }
 }
