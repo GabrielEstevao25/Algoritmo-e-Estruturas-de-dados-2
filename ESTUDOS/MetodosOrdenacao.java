@@ -55,7 +55,7 @@ public class MetodosOrdenacao {
     */
     public static int[] selectionSort(int[] array){
         
-        int [] arrayOrdenado = array.clone();
+        int     [] arrayOrdenado = array.clone();
 
         for(int i = 0; i < arrayOrdenado.length; i++){
             int min = i;
