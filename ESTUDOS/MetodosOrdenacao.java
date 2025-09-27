@@ -52,15 +52,21 @@ public class MetodosOrdenacao {
     Caso médio = Θ(n²)
     Pior caso = Θ(n²)
     */
-    public static int[] selecao(int[] array){
-        int tam = array.length;
-    
-        for(int i = 0; i <= tam - 1; i++){
-            int menor = i;
-            for(int j = i + 1; j <= tam -1; j++){
-                if(array[menor] > array[j]){
-                    menor = j;
-                } 
+    public static int[] selectionSort(int[] array){
+        
+        int     [] arrayOrdenado = array.clone();
+
+        for(int i = 0; i < arrayOrdenado.length; i++){
+            int min = i;
+            for(int j = i + 1; j<arrayOrdenado.length; j++){
+                if(arrayOrdenado[j] < arrayOrdenado[min]){
+                    min = j;
+                }
+            }
+            if(i != min){
+                int temp = arrayOrdenado[i];
+                arrayOrdenado[i] = arrayOrdenado[min];
+                arrayOrdenado[min] = temp;
             }
             int temp = array[i];
             array[i] = array[menor];
