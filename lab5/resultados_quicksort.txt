@@ -1,0 +1,13 @@
+Tamanho;Variação do Pivô;Tempo(ms)
+100;Primeiro Pivô;0,031
+100;Último Pivô;0,025
+100;Pivô Aleatório;0,097
+100;Mediana de Três;0,024
+1000;Primeiro Pivô;0,231
+1000;Último Pivô;0,214
+1000;Pivô Aleatório;0,327
+1000;Mediana de Três;0,404
+10000;Primeiro Pivô;0,881
+10000;Último Pivô;0,900
+10000;Pivô Aleatório;1,074
+10000;Mediana de Três;0,948

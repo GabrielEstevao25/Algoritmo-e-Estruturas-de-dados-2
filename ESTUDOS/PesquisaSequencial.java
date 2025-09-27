@@ -8,7 +8,7 @@ public class PesquisaSequencial {
 
     public static int buscaSequencial(int[] array, int x){
 
-        for(int pos = 0; pos < array.length -1; pos++){
+        for(int pos = 0; pos <= array.length -1; pos++){
             if(array[pos] == x){
                 return pos;
             }

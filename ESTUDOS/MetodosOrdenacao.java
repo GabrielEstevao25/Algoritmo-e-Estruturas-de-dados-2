@@ -8,21 +8,19 @@ public class MetodosOrdenacao {
     Caso médio = Θ(n²)
     Pior caso = Θ(n²)
     */
-    public static int[] insertionSort(int[]array){
-
-        int[] arrayOrdenado = array.clone();
-
-        for(int i = 0; i<= arrayOrdenado.length - 1; i++){
-            int temp = arrayOrdenado[i];
-            int j = i -1;
-            while(j >= 0 && arrayOrdenado[j]>temp){
-                arrayOrdenado[j + 1] = arrayOrdenado[j];
+    public static int[] insercao(int[] array){
+        int tam = array.length;
+         
+        for(int i = 0; i <= tam -1; i++){
+            int temp = array[i];
+            int j = i - 1;
+            while ((j>=0) && (array[j]>temp)) {
+                array[j + 1] = array[j];
                 j--;
             }
-            arrayOrdenado[j + 1] = temp;
+            array[j + 1] = temp;
         }
-
-        return arrayOrdenado;
+        return array;
     }
 
     /*
@@ -32,19 +30,20 @@ public class MetodosOrdenacao {
     Pior caso = Θ(n²)
 
     */
-    public static int[] bubbleSort(int[]array){
-        int[] arrayOrdenado = array.clone();
+    public static int[] bubble(int[] array){
+        int tam = array.length;
 
-        for(int i = 0; i< arrayOrdenado.length -1; i++){
-            for(int j = 0; j < arrayOrdenado.length -1 -i; j++){
-                if(arrayOrdenado[j] > arrayOrdenado[j +1 ]){
-                    int temp = arrayOrdenado[j];
-                    arrayOrdenado[j] = arrayOrdenado[j+1];
-                    arrayOrdenado[j+1] = temp;
+        for(int i = 0; i <= tam - 2; i++){
+            for(int j = 0; j <= tam - 2 - i; j++){
+                if(array[j] > array[j + 1]){
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
-        return arrayOrdenado;
+
+        return array;
     }
 
     /*
@@ -53,33 +52,31 @@ public class MetodosOrdenacao {
     Caso médio = Θ(n²)
     Pior caso = Θ(n²)
     */
-    public static int[] selectionSort(int[] array){
-        
-        int [] arrayOrdenado = array.clone();
-
-        for(int i = 0; i < arrayOrdenado.length; i++){
-            int min = i;
-            for(int j = i + 1; j<arrayOrdenado.length; j++){
-                if(arrayOrdenado[j] < arrayOrdenado[min]){
-                    min = j;
-                }
+    public static int[] selecao(int[] array){
+        int tam = array.length;
+    
+        for(int i = 0; i <= tam - 1; i++){
+            int menor = i;
+            for(int j = i + 1; j <= tam -1; j++){
+                if(array[menor] > array[j]){
+                    menor = j;
+                } 
             }
-            if(i != min){
-                int temp = arrayOrdenado[i];
-                arrayOrdenado[i] = arrayOrdenado[min];
-                arrayOrdenado[min] = temp;
-            }
+            int temp = array[i];
+            array[i] = array[menor];
+            array[menor] = temp;
         }
-        return arrayOrdenado;
+
+        return array;
     }
 
     public static void main(String[] args) {
 
         int[] array = {5, 2, 9, 1, 5, 6};
 
-        int[] arrayInsertion = insertionSort(array);
-        int[] arrayBubble = bubbleSort(array);
-        int[] arraySelection = selectionSort(array);
+        int[] arrayInsertion = insercao(array);
+        int[] arrayBubble = bubble(array);
+        int[] arraySelection = selecao(array);
 
         System.out.println("Insertions Sort: ");
         for (int i = 0; i <= arrayInsertion.length -1; i++) {
